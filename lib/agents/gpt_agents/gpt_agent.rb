@@ -15,10 +15,10 @@ module Agents
       response = gpt_client.chat system_prompt: system_prompt, prompt: request.request_text
 
       response.suggested_actions.each do |action|
-        actions.find{ |a| a.name == action["name"] }&.call(**action["args"])
+        actions.find{ |a| a.name == action["name"] }&.call(action["args"])
       end
 
-      Response.new(response.response_text)
+      response
     end
 
   end

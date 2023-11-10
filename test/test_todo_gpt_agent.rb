@@ -38,8 +38,8 @@ add_todo: Add a todo to a list
     todo_list: The name of the todo list to add the item to
     item_title: The title of the item to add to the list
   For example:
-Input: I'm out of milk and bread
-Output: {"response":"I added milk and bread to your grocery list.","actions":[{"name":"add_item","args":[{"todo_list":"Grocery","item_title":"milk"}]},{"name":"add_item","args":[{"todo_list":"Grocery","item_title":"bread"}]}]}
+    Input: I'm out of milk and bread
+    Output: {"response":"I added milk and bread to your grocery list.","actions":[{"name":"add_item","args":[{"todo_list":"Grocery","item_title":"milk"}]},{"name":"add_item","args":[{"todo_list":"Grocery","item_title":"bread"}]}]}
 
 
 EOS

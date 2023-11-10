@@ -1,6 +1,8 @@
 require_relative 'logger'
 require_relative 'version'
 
+require 'openai' rescue nil # OpenAI is optional
+
 require_relative 'gpt_clients/gpt_client'
 require_relative 'gpt_clients/echo_gpt_client'
 

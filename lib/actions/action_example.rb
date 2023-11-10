@@ -7,7 +7,7 @@ module Agents
     end
 
     def for_prompt
-      "Input: #{input}\nOutput: #{output}"
+      "    Input: #{input}\n    Output: #{output}"
     end
 
   end

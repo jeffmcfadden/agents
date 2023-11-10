@@ -36,6 +36,7 @@ GEM
       super_diff (~> 0.10)
 
 PLATFORMS
+  arm64-darwin-21
   arm64-darwin-22
 
 DEPENDENCIES

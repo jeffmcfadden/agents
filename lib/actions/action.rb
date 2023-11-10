@@ -19,8 +19,8 @@ module Agents
     end
 
     # Execute the block with the given arguments.
-    def call(**args)
-      @block.call(**args)
+    def call(args)
+      @block.call(args)
     end
 
     def for_prompt
