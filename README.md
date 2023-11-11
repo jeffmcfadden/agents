@@ -38,6 +38,9 @@ require 'agents'
 ### Running Actions
 
 
+## Prompt Injection
+At this time there is no built-in protection from prompt injection/jailbreak/etc. 
+
 ## Testing
 
 Use `tldr` to run the tests.
