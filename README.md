@@ -7,10 +7,21 @@ A ruby library for building and managing AI agents within your application.
 Gemfile:
 
 ```ruby
-gem 'agents', git: "jeffmcfadden/agents"
+gem 'ruby-agents'
 ```
 
 `bundle install`
+
+### OR
+
+```shell
+$ gem install ruby-agents
+```
+
+```ruby
+require 'agents'
+```
+
 
 ## Usage
 
