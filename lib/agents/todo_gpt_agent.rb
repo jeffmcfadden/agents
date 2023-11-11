@@ -1,5 +1,5 @@
 module Agents
-  class TodoGptAgent < GptAgent
+  class TodoGptAgent < Agent
 
     def initialize(**args)
       super(**args)

@@ -11,16 +11,12 @@ if defined?(::OpenAI::Client)
 end
 
 require_relative 'agents/agent'
-require_relative 'agents/dispatcher'
-require_relative 'agents/echo_agent'
-
-require_relative 'agents/gpt_agents/gpt_agent'
-require_relative 'agents/gpt_agents/calendar_gpt_agent'
-require_relative 'agents/gpt_agents/categorizing_gpt_agent'
-require_relative 'agents/gpt_agents/dispatching_gpt_agent'
-require_relative 'agents/gpt_agents/information_retrieval_gpt_agent'
-require_relative 'agents/gpt_agents/promptless_gpt_agent'
-require_relative 'agents/gpt_agents/todo_gpt_agent'
+require_relative 'agents/calendar_gpt_agent'
+require_relative 'agents/categorizing_gpt_agent'
+require_relative 'agents/dispatching_gpt_agent'
+require_relative 'agents/information_retrieval_gpt_agent'
+require_relative 'agents/promptless_gpt_agent'
+require_relative 'agents/todo_gpt_agent'
 
 require_relative 'agents/unhandleable_request_agent'
 
@@ -33,7 +29,5 @@ require_relative 'responses/unhandleable_request_response'
 require_relative 'actions/action'
 require_relative 'actions/action_argument'
 require_relative 'actions/action_example'
-
-module Agents
-
-end
+require_relative 'actions/ask_for_clarification_action'
+require_relative 'actions/delegate_action'

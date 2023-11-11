@@ -9,18 +9,15 @@ module Agents
     # @param [String] description
     # @param [Array<ActionArgument>] arguments
     # @param [Array<ActionExample>] examples
-    # @param [Block] block
-    def initialize(name:, description: "", arguments: [], examples: [], &block)
+    def initialize(name:, description: "", arguments: [], examples: [])
       @name = name
       @description = description
       @arguments = arguments
       @examples = examples
-      @block = block
     end
 
     # Execute the block with the given arguments.
-    def call(args)
-      @block.call(args)
+    def perform(request:, args:)
     end
 
     def for_prompt

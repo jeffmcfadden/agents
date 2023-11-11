@@ -1,10 +1,10 @@
 module Agents
-  class CalendarGptAgent < GptAgent
+  class InformationRetrievalGptAgent < Agent
 
     attr_reader :system_prompt
     def initialize(**args)
       super(**args)
-      @description = "I am an AI Assistant that specializes in Calendar and Scheduling Management for Appointments, meetings, etc."
+      @description = "I am an AI Assistant that specializes in fetching information and answering general questions, etc."
       @system_prompt = <<~EOS
         You are a helpful assistant.
       EOS
