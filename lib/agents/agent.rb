@@ -33,15 +33,8 @@ EOS
 
     def handle(request:)
       gpt_response = gpt_client.chat system_prompt: build_prompt, prompt: "#{request.request_text}"
-
       results = gpt_response.suggested_actions.map{ |sa|
-        action = actions.find{ |a| a.name == sa.dig("name") }
-
-        unless action.nil?
-          return action.perform(request: request, args: sa.dig("args"))
-        else
-          return nil
-        end
+        actions.find{ |a| a.name == sa.dig("name") }&.perform(request: request, args: sa.dig("args"))
       }.compact
 
       if results.empty?
@@ -55,14 +48,14 @@ EOS
       prompt = system_prompt.dup
 
       if actions.any?
-        prompt << "The actions you can take are:\n"
+        prompt << "The ONLY actions you can take are: #{actions.collect(&:name).join(", ")}. Here are the details on those actions: \n"
         prompt << actions.collect(&:for_prompt).join("\n\n")
       end
 
       if children.any?
         prompt << <<~EOS
 
-If you don't know how to handle this request, please delegate it to another agent. The agents you can delegate to are:
+If you don't know how to handle this request, please `delegate` it to another agent. The agents you can `delegate` to are:
 #{children.each.collect{ "  - #{_1.name}: #{_1.description}" }.join("\n")}
 
 If you choose to delegate this request, please be sure to include `agent` as a key in your `args` object.

@@ -13,7 +13,7 @@ module Agents
 
       end
       def perform(request:, args:)
-        puts "I am the add todo action and I just handled #{args}"
+        "I am the add todo action and I just handled a request"
       end
     end
 
@@ -27,7 +27,6 @@ module Agents
       )
 
       @primary_agent = Agent.new(gpt_client: @test_gpt_client, children: [@todo_agent])
-
     end
 
     def test_prompt
@@ -41,7 +40,7 @@ The `actions` key should be an array of JSON objects, each of which has a `name`
 should be taken, or you don't think there's anything relevant, then respond with an empty object for the `actions` key. The `args`
 key should be a JSON object with the arguments for the action.
 
-The actions you can take are:
+The ONLY actions you can take are: ask_for_clarification, delegate. Here are the details on those actions: 
 ask_for_clarification: Ask for clarification if the request is not clear, or you don't know how to help.
   Arguments:
     question: The question, clarification, or additional information you need.
@@ -51,7 +50,7 @@ delegate: Delegate to another agent
   Arguments:
     agent: The name of the agent to delegate the request to.
 
-If you don't know how to handle this request, please delegate it to another agent. The agents you can delegate to are:
+If you don't know how to handle this request, please `delegate` it to another agent. The agents you can `delegate` to are:
   - todo_agent: Handles todo list and reminders actions.
 
 If you choose to delegate this request, please be sure to include `agent` as a key in your `args` object.
