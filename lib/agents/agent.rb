@@ -38,9 +38,9 @@ EOS
         action = actions.find{ |a| a.name == sa.dig("name") }
 
         unless action.nil?
-          action.perform(request: request, args: sa.dig("args"))
+          return action.perform(request: request, args: sa.dig("args"))
         else
-          nil
+          return nil
         end
       }.compact
 
