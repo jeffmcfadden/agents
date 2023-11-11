@@ -1,5 +1,5 @@
 module Agents
-  class CategorizingGptAgent < GptAgent
+  class CategorizingGptAgent < Agent
 
     attr_reader :system_prompt
     def initialize(**args)

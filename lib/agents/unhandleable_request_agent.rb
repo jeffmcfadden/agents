@@ -1,5 +1,5 @@
 module Agents
-  class UnhandleableRequestAgent
+  class UnhandleableRequestAgent < Agent
     def handle(request:)
       return UnhandleableRequestResponse.new(request: request)
     end
