@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    agents (0.0.1)
+    ruby-agents (0.1.2)
 
 GEM
   remote: http://rubygems.org/
@@ -40,7 +40,7 @@ PLATFORMS
   arm64-darwin-22
 
 DEPENDENCIES
-  agents!
+  ruby-agents!
   ruby-openai (>= 5.1)
   tldr (>= 0.9.5)
 

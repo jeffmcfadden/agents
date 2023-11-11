@@ -19,10 +19,6 @@ module Agents
     def system_prompt
       prompt = @system_prompt
 
-      # Updates to make:
-      #   - Arguments should be objects
-      #   - Actions should support examples, which should also be their own objects
-
       unless self.actions.empty?
         prompt << "The following actions are supported: \n"
         prompt << self.actions.collect(&:for_prompt).join("\n\n")

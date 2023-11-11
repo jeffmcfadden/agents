@@ -5,14 +5,14 @@ require 'logger'
 require_relative 'lib/version'
 
 Gem::Specification.new do |s|
-  s.name = "agents"
-  s.version     = '0.0.1' # Agents::VERSION
+  s.name = "ruby-agents"
+  s.version     = Agents::VERSION
   s.platform    = Gem::Platform::RUBY
 
   s.authors = ["Jeff McFadden"]
   s.date = "2023-11-05"
   s.description = "Put AI to Work."
-  s.email = "jeff@thegreenshed.org"
+  s.email = "55709+jeffmcfadden@users.noreply.github.com"
   s.files = `git ls-files`.split("\n")
 
   s.homepage = "https://github.com/jeffmcfadden/agents"

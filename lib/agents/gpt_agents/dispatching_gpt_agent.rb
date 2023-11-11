@@ -17,10 +17,11 @@ module Agents
     end
 
     def prompt_for_categorizing_request(request:)
-      categorizing_request_prompt = "The following is a list of Assistants and a description of what each can do: \n\n"
-      categorizing_request_prompt << agents.collect{ "#{_1.class.name}: #{_1.description}" }.join("\n\n")
-      categorizing_request_prompt << "Please categorize the request by typing the name of the Assistant that best fits the request.\n\n"
-      categorizing_request_prompt << "Request: #{request.request_text}"
+      prompt = "The following is a list of Assistants and a description of what each can do: \n\n"
+      prompt << agents.collect{ "#{_1.class.name}: #{_1.description}" }.join("\n\n")
+      prompt << "If you are not sure which Assistant to use, it's okay to ask for more information.\n\n"
+      prompt << "Please categorize the request by typing the name of the Assistant that best fits the request.\n\n"
+      prompt << "Request: #{request.request_text}"
     end
   end
 end
